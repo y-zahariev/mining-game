@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mining Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="ui">
+    <div id="ui-left">
+      <div id="level-line">
+        <span id="levelText">Level 1</span>
+      </div>
+      <div id="xpBarBg">
+        <div id="xpBarFill"></div>
+      </div>
+    </div>
+
+    <div id="ui-center">
+      <span id="backpackText">Backpack: 0 / 3</span>
+      <span id="controlsHelp">P: Open shop · Enter: Place building · Esc: Exit build mode</span>
+    </div>
+
+    <div id="ui-right">
+      <span id="moneyText">Money: 0</span>
+      <div id="saveButtons">
+        <button id="exportBtn">Export</button>
+        <button id="importBtn">Import</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop Window -->
+  <div id="shopWindow" class="hidden">
+    <div class="shop-inner">
+      <h3>Build Menu (P to toggle)</h3>
+      <p>Select an item, then use arrow keys/WASD to move it. Press Enter to place, Esc to cancel.</p>
+      <div class="shop-items">
+        <button data-item="DRILL_RIG">
+          Drill Rig (2x2) – Cost: <span id="rigPriceText">0</span>
+        </button>
+        <button data-item="RAIL">
+          Rail – Cost: <span id="railPriceText">0</span>
+        </button>
+        <button data-item="CART">
+          Cart – Cost: <span id="cartPriceText">0</span>
+        </button>
+      </div>
+
+      <button id="closeShop">Close</button>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <script src="src/gameState.js"></script>
+  <script src="src/logic.js"></script>
+  <script src="src/saveLoad.js"></script>
+  <script src="src/render.js"></script>
+  <script src="src/main.js"></script>
+</body>
+
+</html>
